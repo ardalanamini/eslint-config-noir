@@ -158,7 +158,7 @@ exports.rules = {
 
   "array-bracket-newline": ["error", { multiline: true }],
   "array-bracket-spacing": "error",
-  "array-element-newline": ["error", { multiline: true }],
+  "array-element-newline": ["error", "consistent"],
   "arrow-parens"         : ["error", "as-needed", { requireForBlockBody: true }],
   "arrow-spacing"        : "error",
   "block-spacing"        : "error",

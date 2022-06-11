@@ -30,7 +30,8 @@
     "checker",
     "verify",
     "enforce",
-    "hint"
+    "hint",
+    "typescript"
   ],
   "main": "index.js",
   "scripts": {
@@ -39,9 +40,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=5.27.1",
     "eslint": ">=8.17.0"
   },
+  "peerDependenciesMeta": {
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    }
+  },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
     "eslint": "^8.17.0",
     "eslint-plugin-eslint-plugin": "^4.2.0",
     "eslint-plugin-node": "^11.1.0"
