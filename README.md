@@ -1,6 +1,14 @@
 # eslint-config-noir
 
 [![Test](https://github.com/ardalanamini/eslint-config-noir/actions/workflows/test.yml/badge.svg)](https://github.com/ardalanamini/eslint-config-noir/actions/workflows/test.yml)
+[![Npm Version](https://img.shields.io/npm/v/eslint-config-noir.svg)](https://www.npmjs.com/package/eslint-config-noir)
+[![License](https://img.shields.io/github/license/ardalanamini/eslint-config-noir.svg)](https://github.com/ardalanamini/eslint-config-noir/blob/master/LICENSE)
+[![Pull Requests](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](https://github.com/ardalanamini/eslint-config-noir/pulls)
+[![Known Vulnerabilities](https://snyk.io/test/github/ardalanamini/eslint-config-noir/badge.svg?targetFile=package.json)](https://snyk.io/test/github/ardalanamini/eslint-config-noir?targetFile=package.json)
+[![Npm Total Downloads](https://img.shields.io/npm/dt/eslint-config-noir.svg)](https://www.npmjs.com/package/eslint-config-noir)
+[![Npm Monthly Downloads](https://img.shields.io/npm/dm/eslint-config-noir.svg)](https://www.npmjs.com/package/eslint-config-noir)
+[![Github Stars](https://img.shields.io/github/stars/ardalanamini/eslint-config-noir.svg?style=social&label=Stars)](https://github.com/ardalanamini/eslint-config-noir)
+[![Github Forks](https://img.shields.io/github/forks/ardalanamini/eslint-config-noir.svg?style=social&label=Fork)](https://github.com/ardalanamini/eslint-config-noir)
 
 Noir ESLint shareable config.
 
