@@ -12,7 +12,9 @@ jobs:
   release:
     name: Create Release
 
-    concurrency: github-release
+    concurrency:
+      group: ${{ github.workflow }}-github-${{ github.ref_name }}
+      cancel-in-progress: true
 
     environment:
       name: release
@@ -40,7 +42,9 @@ jobs:
   publish-npm:
     name: Publish to NPM
 
-    concurrency: npm-release
+    concurrency:
+      group: ${{ github.workflow }}-npm-${{ github.ref_name }}
+      cancel-in-progress: true
 
     environment:
       name: npm
@@ -68,7 +72,9 @@ jobs:
   publish-gpr:
     name: Publish to GitHub Packages
 
-    concurrency: gpr-release
+    concurrency:
+      group: ${{ github.workflow }}-gpr-${{ github.ref_name }}
+      cancel-in-progress: true
 
     environment:
       name: gpr
