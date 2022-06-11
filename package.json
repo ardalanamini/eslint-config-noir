@@ -1,0 +1,48 @@
+{
+  "name": "eslint-config-noir",
+  "version": "1.0.0",
+  "description": "Noir ESLint shareable config",
+  "author": "Ardalan Amini <ardalanamini22@gmail.com> (https://ardalanamini.com/)",
+  "license": "MIT",
+  "homepage": "https://github.com/ardalanamini/eslint-config-noir#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ardalanamini/eslint-config-noir.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ardalanamini/eslint-config-noir/issues"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "noir",
+    "code",
+    "quality",
+    "style",
+    "lint",
+    "linter",
+    "validate",
+    "code style",
+    "strict",
+    "check",
+    "checker",
+    "verify",
+    "enforce",
+    "hint"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-plugin-eslint-plugin": "^4.2.0",
+    "eslint-plugin-node": "^11.1.0"
+  }
+}
