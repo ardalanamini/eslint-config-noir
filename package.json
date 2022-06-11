@@ -30,7 +30,8 @@
     "checker",
     "verify",
     "enforce",
-    "hint"
+    "hint",
+    "typescript"
   ],
   "main": "index.js",
   "scripts": {
