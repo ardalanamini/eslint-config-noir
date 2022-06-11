@@ -6,8 +6,15 @@ extends:
   - eslint:recommended
   - plugin:node/recommended
   - plugin:eslint-plugin/recommended
+  - plugin:@typescript-eslint/recommended
   - .
   - ./typescript
+parser: "@typescript-eslint/parser"
 parserOptions:
   ecmaVersion: latest
+  sourceType: script
+settings:
+  import/resolver: typescript
+plugins:
+  - "@typescript-eslint"
 rules: {}
