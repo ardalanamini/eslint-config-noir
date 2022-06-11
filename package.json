@@ -14,8 +14,9 @@
   },
   "keywords": [
     "eslint",
-    "eslintplugin",
-    "eslint-plugin",
+    "config",
+    "eslintconfig",
+    "eslint-config",
     "noir",
     "code",
     "quality",
