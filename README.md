@@ -30,3 +30,15 @@ Add `noir` to the `extends` section of your `.eslintrc` configuration file. You 
   ]
 }
 ```
+
+With [TypeScript](https://www.typescriptlang.org) support:
+
+```json
+{
+  "extends": [
+    "eslint:recommended",
+    "noir",
+    "noir/typescript"
+  ]
+}
+```
