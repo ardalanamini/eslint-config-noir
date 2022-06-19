@@ -41,10 +41,14 @@
   },
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">=5.28.0",
+    "eslint-plugin-import": ">=2.26.0",
     "eslint": ">=8.17.0"
   },
   "peerDependenciesMeta": {
     "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "eslint-plugin-import": {
       "optional": true
     }
   },
@@ -53,6 +57,7 @@
     "@typescript-eslint/parser": "^5.28.0",
     "eslint": "^8.18.0",
     "eslint-plugin-eslint-plugin": "^4.2.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "typescript": "^4.7.4"
   }
