@@ -4,9 +4,15 @@ env:
   node: true
 extends:
   - eslint:recommended
+  - .
   - plugin:node/recommended
   - plugin:eslint-plugin/recommended
-  - .
+  - plugin:@typescript-eslint/recommended
+  - ./typescript
+parser: '@typescript-eslint/parser'
 parserOptions:
+  project: ./tsconfig.json
   ecmaVersion: latest
-rules: {}
+  sourceType: script
+plugins:
+  - '@typescript-eslint'
