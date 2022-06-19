@@ -39,6 +39,22 @@ Add `noir` to the `extends` section of your `.eslintrc` configuration file. You 
 }
 ```
 
+With [Import](https://github.com/import-js/eslint-plugin-import) support:
+
+> You'll first need to install [Import ESLint Plugin](https://github.com/import-js/eslint-plugin-import).
+
+```json
+{
+  "extends": [
+    "eslint:recommended",
+    "noir",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/recommended",
+    "noir/import"
+  ]
+}
+```
+
 With [TypeScript](https://www.typescriptlang.org) support:
 
 > You'll first need to install [TypeScript ESLint](https://typescript-eslint.io).
@@ -51,5 +67,13 @@ With [TypeScript](https://www.typescriptlang.org) support:
     "plugin:@typescript-eslint/recommended",
     "noir/typescript"
   ]
+}
+```
+
+Or all of the configs at once:
+
+```json
+{
+  "extends": "noir/all"
 }
 ```
