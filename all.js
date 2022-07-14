@@ -16,3 +16,7 @@ exports.plugins = [
   "@typescript-eslint",
   "import",
 ];
+
+exports.settings = {
+  "import/resolver": "typescript",
+};
