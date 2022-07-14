@@ -19,7 +19,7 @@ exports.rules = {
     },
   ],
   "@typescript-eslint/consistent-type-definitions"  : ["error", "interface"],
-  "@typescript-eslint/consistent-type-exports"      : "error",
+  "@typescript-eslint/consistent-type-exports"      : ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
   "@typescript-eslint/consistent-type-imports"      : ["error", { prefer: "no-type-imports" }],
   "@typescript-eslint/explicit-function-return-type": [
     "error",

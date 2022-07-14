@@ -93,7 +93,7 @@ exports.rules = {
     "error",
     {
       ignoreDefaultValues: true,
-      ignore             : [0, 1, 2, 10],
+      ignore             : [0, "0n", 1, "1n", 2, "2n", 10, "10n"],
     },
   ],
   "no-mixed-operators"  : "error",

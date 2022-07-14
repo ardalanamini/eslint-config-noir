@@ -30,8 +30,22 @@ exports.rules = {
    * @see https://github.com/import-js/eslint-plugin-import#style-guide
    */
 
-  "import/first"               : "error",
-  "import/exports-last"        : "error",
-  "import/no-duplicates"       : ["error", { considerQueryString: true }],
+  "import/first": "error",
+
+  "import/exports-last": "error",
+
+  "import/no-duplicates": ["error", { considerQueryString: true }],
+
+  "sort-imports": "off",
+  "import/order": [
+    "error",
+    {
+      groups     : ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+      alphabetize: {
+        order: "asc",
+      },
+    },
+  ],
+
   "import/newline-after-import": ["error", { count: 1 }],
 };
