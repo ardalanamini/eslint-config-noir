@@ -53,10 +53,10 @@
     }
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.28.0",
-    "@typescript-eslint/parser": "^5.28.0",
-    "eslint": "^8.18.0",
-    "eslint-plugin-eslint-plugin": "^4.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
+    "eslint-plugin-eslint-plugin": "^5.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-node": "^11.1.0",
     "typescript": "^4.7.4"
