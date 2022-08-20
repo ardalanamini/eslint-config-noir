@@ -36,6 +36,8 @@ exports.rules = {
 
   "import/no-duplicates": ["error", { considerQueryString: true }],
 
+  "import/extensions": ["error", "always", { ignorePackages: true }],
+
   "sort-imports": "off",
   "import/order": [
     "error",
