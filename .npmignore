@@ -1,0 +1,6 @@
+.idea/
+.vscode/
+.github/
+.gitattributes
+.eslintrc.yml
+tsconfig.json
