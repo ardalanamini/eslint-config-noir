@@ -18,9 +18,14 @@ exports.rules = {
       objectLiteralTypeAssertions: "allow-as-parameter",
     },
   ],
-  "@typescript-eslint/consistent-type-definitions"  : ["error", "interface"],
-  "@typescript-eslint/consistent-type-exports"      : ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
-  "@typescript-eslint/consistent-type-imports"      : ["error", { prefer: "inline-type-imports" }],
+  "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+  "@typescript-eslint/consistent-type-exports"    : ["error", { fixMixedExportsWithInlineTypeSpecifier: true }],
+  "@typescript-eslint/consistent-type-imports"    : [
+    "error", {
+      prefer  : "type-imports",
+      fixStyle: "inline-type-imports",
+    },
+  ],
   "@typescript-eslint/explicit-function-return-type": [
     "error",
     {
