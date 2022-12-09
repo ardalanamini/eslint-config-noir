@@ -1,8 +1,6 @@
 name: Test
 
 on:
-  schedule:
-    - cron: "0 0 1 * *"
   push:
     branches:
       - main
@@ -59,3 +57,18 @@ jobs:
 
       - name: Check code styles
         run: npm run lint
+
+  test-summary:
+    name: Test Summary
+
+    needs:
+      - test
+
+    if: ${{ always() && github.event_name == 'pull_request' }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check test matrix status
+        if  : ${{ needs.test.result != 'success' }}
+        run : exit 1
