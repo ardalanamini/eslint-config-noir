@@ -26,11 +26,9 @@ jobs:
           - macos-latest
           - windows-latest
         node-version:
-          - 14
-          - 15
           - 16
-          - 17
           - 18
+          - 20
 
     steps:
       - uses: actions/checkout@v4
@@ -38,7 +36,7 @@ jobs:
       - name: Use PNPM
         uses: pnpm/action-setup@v2
         with:
-          version: 7
+          version: 8
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
