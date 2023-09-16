@@ -6,7 +6,7 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+*'
 
 env:
-  NODE_VERSION: 16
+  NODE_VERSION: 20
 
 jobs:
   test:
@@ -117,7 +117,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@ardalanamini'
 
-      - run: sed -i 's/"name":\ "eslint-config-noir"/"name":\ "@ardalanamini\/eslint-config-noir"/g' package.json package-lock.json
+      - run: sed -i 's/"name":\ "eslint-config-noir"/"name":\ "@ardalanamini\/eslint-config-noir"/g' package.json
 
       - name: Install dependencies
         run: pnpm i
