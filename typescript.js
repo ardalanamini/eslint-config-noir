@@ -45,38 +45,60 @@ exports.rules = {
         memberTypes: [
           // Index signature
           "signature",
-          "call-signature",
+          "readonly-signature",
 
           // Fields
           "public-static-field",
+          "public-static-readonly-field",
           "protected-static-field",
+          "protected-static-readonly-field",
           "private-static-field",
+          "private-static-readonly-field",
           "#private-static-field",
+          "#private-static-readonly-field",
 
           "public-decorated-field",
+          "public-decorated-readonly-field",
           "protected-decorated-field",
+          "protected-decorated-readonly-field",
           "private-decorated-field",
+          "private-decorated-readonly-field",
 
           "public-instance-field",
+          "public-instance-readonly-field",
           "protected-instance-field",
+          "protected-instance-readonly-field",
           "private-instance-field",
+          "private-instance-readonly-field",
           "#private-instance-field",
+          "#private-instance-readonly-field",
 
           "public-abstract-field",
+          "public-abstract-readonly-field",
           "protected-abstract-field",
+          "protected-abstract-readonly-field",
 
           "public-field",
+          "public-readonly-field",
           "protected-field",
+          "protected-readonly-field",
           "private-field",
+          "private-readonly-field",
           "#private-field",
+          "#private-readonly-field",
 
           "static-field",
+          "static-readonly-field",
           "instance-field",
+          "instance-readonly-field",
           "abstract-field",
+          "abstract-readonly-field",
 
           "decorated-field",
+          "decorated-readonly-field",
 
           "field",
+          "readonly-field",
 
           // Static initialization
           "static-initialization",
@@ -85,8 +107,6 @@ exports.rules = {
           "public-constructor",
           "protected-constructor",
           "private-constructor",
-
-          "constructor",
 
           // Getters
           "public-static-get",
@@ -167,19 +187,6 @@ exports.rules = {
 
           "public-abstract-method",
           "protected-abstract-method",
-
-          "public-method",
-          "protected-method",
-          "private-method",
-          "#private-method",
-
-          "static-method",
-          "instance-method",
-          "abstract-method",
-
-          "decorated-method",
-
-          "method",
         ],
         order: "alphabetically",
       },
@@ -195,13 +202,16 @@ exports.rules = {
     },
   ],
   "@typescript-eslint/no-duplicate-enum-values"               : "error",
+  "@typescript-eslint/no-duplicate-type-constituents"         : "error",
   "@typescript-eslint/no-invalid-void-type"                   : "error",
-  "@typescript-eslint/no-meaningless-void-operator"           : "error",
+  "@typescript-eslint/no-meaningless-void-operator"           : "warn",
+  "@typescript-eslint/no-mixed-enums"                         : "error",
   "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
   "@typescript-eslint/no-require-imports"                     : "error",
   "@typescript-eslint/no-unnecessary-condition"               : "error",
   "@typescript-eslint/no-unnecessary-qualifier"               : "error",
   "@typescript-eslint/no-unnecessary-type-arguments"          : "error",
+  "@typescript-eslint/no-unsafe-enum-comparison"              : "error",
   "@typescript-eslint/no-useless-empty-export"                : "error",
   "@typescript-eslint/non-nullable-type-assertion-style"      : "error",
   "@typescript-eslint/prefer-for-of"                          : "error",
@@ -216,7 +226,6 @@ exports.rules = {
   "@typescript-eslint/prefer-ts-expect-error"                 : "error",
   "@typescript-eslint/promise-function-async"                 : "error",
   "@typescript-eslint/require-array-sort-compare"             : ["error", { ignoreStringArrays: true }],
-  "@typescript-eslint/sort-type-union-intersection-members"   : "error",
   "@typescript-eslint/switch-exhaustiveness-check"            : "error",
   "@typescript-eslint/type-annotation-spacing"                : "error",
   "@typescript-eslint/unified-signatures"                     : ["error", { ignoreDifferentlyNamedParameters: true }],
@@ -225,6 +234,9 @@ exports.rules = {
    * Extension Rules ---------------------------------------------------------------------------------------------------
    * @see https://typescript-eslint.io/rules/#extension-rules
    */
+
+  "class-methods-use-this"                   : "off",
+  "@typescript-eslint/class-methods-use-this": "error",
 
   "brace-style"                   : "off",
   "@typescript-eslint/brace-style": "error",

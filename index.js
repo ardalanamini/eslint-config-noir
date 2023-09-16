@@ -6,7 +6,7 @@ exports.rules = {
    * @see https://eslint.org/docs/rules/#possible-problems
    */
 
-  "array-callback-return"        : "off",
+  "array-callback-return"        : "error",
   "no-await-in-loop"             : "error",
   "no-constant-binary-expression": "error",
   "no-constructor-return"        : "error",
@@ -234,12 +234,13 @@ exports.rules = {
   "lines-around-comment" : [
     "error",
     {
-      beforeBlockComment: true,
-      beforeLineComment : true,
-      allowBlockStart   : true,
-      allowClassStart   : true,
-      allowObjectStart  : true,
-      allowArrayStart   : true,
+      beforeBlockComment  : true,
+      beforeLineComment   : true,
+      afterHashbangComment: true,
+      allowBlockStart     : true,
+      allowClassStart     : true,
+      allowObjectStart    : true,
+      allowArrayStart     : true,
     },
   ],
   "lines-between-class-members": ["error", "always"],
