@@ -53,6 +53,10 @@ jobs:
       name: npm
       url: https://www.npmjs.com/package/eslint-config-noir
 
+    permissions:
+      contents: read
+      id-token: write
+
     runs-on: ubuntu-latest
 
     needs:
@@ -95,6 +99,7 @@ jobs:
     permissions:
       contents: read
       packages: write
+      id-token: write
 
     runs-on: ubuntu-latest
 
