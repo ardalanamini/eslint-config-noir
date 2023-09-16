@@ -94,7 +94,7 @@ jobs:
 
     environment:
       name: gpr
-      url: https://github.com/${{ github.repository }}/packages
+      url: https://github.com/${{ github.repository }}/pkgs/npm/eslint-config-noir
 
     permissions:
       contents: read
