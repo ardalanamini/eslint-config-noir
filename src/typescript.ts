@@ -1,6 +1,12 @@
-"use strict";
+const configs = ["plugin:@typescript-eslint/recommended"];
 
-exports.rules = {
+export { configs as extends };
+
+export const parser = "@typescript-eslint/parser";
+
+export const plugins = ["@typescript-eslint"];
+
+export const rules = {
   /**
    * Supported Rules ---------------------------------------------------------------------------------------------------
    * @see https://typescript-eslint.io/rules/#supported-rules
@@ -11,6 +17,7 @@ exports.rules = {
   "@typescript-eslint/class-literal-property-style"   : ["error", "fields"],
   "@typescript-eslint/consistent-generic-constructors": ["error", "constructor"],
   "@typescript-eslint/consistent-indexed-object-style": ["error", "record"],
+  "@typescript-eslint/consistent-return"              : "error",
   "@typescript-eslint/consistent-type-assertions"     : [
     "error",
     {
@@ -29,6 +36,7 @@ exports.rules = {
   "@typescript-eslint/explicit-function-return-type": [
     "error",
     {
+      allowExpressions                                    : true,
       allowTypedFunctionExpressions                       : true,
       allowHigherOrderFunctions                           : true,
       allowDirectConstAssertionInArrowFunctions           : true,
@@ -45,60 +53,38 @@ exports.rules = {
         memberTypes: [
           // Index signature
           "signature",
-          "readonly-signature",
+          "call-signature",
 
           // Fields
           "public-static-field",
-          "public-static-readonly-field",
           "protected-static-field",
-          "protected-static-readonly-field",
           "private-static-field",
-          "private-static-readonly-field",
           "#private-static-field",
-          "#private-static-readonly-field",
 
           "public-decorated-field",
-          "public-decorated-readonly-field",
           "protected-decorated-field",
-          "protected-decorated-readonly-field",
           "private-decorated-field",
-          "private-decorated-readonly-field",
 
           "public-instance-field",
-          "public-instance-readonly-field",
           "protected-instance-field",
-          "protected-instance-readonly-field",
           "private-instance-field",
-          "private-instance-readonly-field",
           "#private-instance-field",
-          "#private-instance-readonly-field",
 
           "public-abstract-field",
-          "public-abstract-readonly-field",
           "protected-abstract-field",
-          "protected-abstract-readonly-field",
 
           "public-field",
-          "public-readonly-field",
           "protected-field",
-          "protected-readonly-field",
           "private-field",
-          "private-readonly-field",
           "#private-field",
-          "#private-readonly-field",
 
           "static-field",
-          "static-readonly-field",
           "instance-field",
-          "instance-readonly-field",
           "abstract-field",
-          "abstract-readonly-field",
 
           "decorated-field",
-          "decorated-readonly-field",
 
           "field",
-          "readonly-field",
 
           // Static initialization
           "static-initialization",
@@ -107,6 +93,39 @@ exports.rules = {
           "public-constructor",
           "protected-constructor",
           "private-constructor",
+
+          "constructor",
+
+          // Accessors
+          "public-static-accessor",
+          "protected-static-accessor",
+          "private-static-accessor",
+          "#private-static-accessor",
+
+          "public-decorated-accessor",
+          "protected-decorated-accessor",
+          "private-decorated-accessor",
+
+          "public-instance-accessor",
+          "protected-instance-accessor",
+          "private-instance-accessor",
+          "#private-instance-accessor",
+
+          "public-abstract-accessor",
+          "protected-abstract-accessor",
+
+          "public-accessor",
+          "protected-accessor",
+          "private-accessor",
+          "#private-accessor",
+
+          "static-accessor",
+          "instance-accessor",
+          "abstract-accessor",
+
+          "decorated-accessor",
+
+          "accessor",
 
           // Getters
           "public-static-get",
@@ -187,12 +206,26 @@ exports.rules = {
 
           "public-abstract-method",
           "protected-abstract-method",
+
+          "public-method",
+          "protected-method",
+          "private-method",
+          "#private-method",
+
+          "static-method",
+          "instance-method",
+          "abstract-method",
+
+          "decorated-method",
+
+          "method",
         ],
         order: "alphabetically",
       },
     },
   ],
   "@typescript-eslint/method-signature-style"         : ["error", "method"],
+  "@typescript-eslint/no-array-delete"                : "error",
   "@typescript-eslint/no-confusing-non-null-assertion": "error",
   "@typescript-eslint/no-confusing-void-expression"   : [
     "error",
@@ -201,34 +234,55 @@ exports.rules = {
       ignoreVoidOperator  : true,
     },
   ],
-  "@typescript-eslint/no-duplicate-enum-values"               : "error",
-  "@typescript-eslint/no-duplicate-type-constituents"         : "error",
-  "@typescript-eslint/no-invalid-void-type"                   : "error",
-  "@typescript-eslint/no-meaningless-void-operator"           : "warn",
-  "@typescript-eslint/no-mixed-enums"                         : "error",
-  "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
-  "@typescript-eslint/no-require-imports"                     : "error",
-  "@typescript-eslint/no-unnecessary-condition"               : "error",
-  "@typescript-eslint/no-unnecessary-qualifier"               : "error",
-  "@typescript-eslint/no-unnecessary-type-arguments"          : "error",
-  "@typescript-eslint/no-unsafe-enum-comparison"              : "error",
-  "@typescript-eslint/no-useless-empty-export"                : "error",
-  "@typescript-eslint/non-nullable-type-assertion-style"      : "error",
-  "@typescript-eslint/prefer-for-of"                          : "error",
-  "@typescript-eslint/prefer-function-type"                   : "error",
-  "@typescript-eslint/prefer-includes"                        : "error",
-  "@typescript-eslint/prefer-nullish-coalescing"              : "error",
-  "@typescript-eslint/prefer-optional-chain"                  : "error",
-  "@typescript-eslint/prefer-readonly"                        : "error",
-  "@typescript-eslint/prefer-reduce-type-parameter"           : "error",
-  "@typescript-eslint/prefer-return-this-type"                : "error",
-  "@typescript-eslint/prefer-string-starts-ends-with"         : "error",
-  "@typescript-eslint/prefer-ts-expect-error"                 : "error",
-  "@typescript-eslint/promise-function-async"                 : "error",
-  "@typescript-eslint/require-array-sort-compare"             : ["error", { ignoreStringArrays: true }],
-  "@typescript-eslint/switch-exhaustiveness-check"            : "error",
-  "@typescript-eslint/type-annotation-spacing"                : "error",
-  "@typescript-eslint/unified-signatures"                     : ["error", { ignoreDifferentlyNamedParameters: true }],
+  "@typescript-eslint/no-duplicate-enum-values"      : "error",
+  "@typescript-eslint/no-duplicate-type-constituents": "error",
+  "@typescript-eslint/no-empty-object-type"          : [
+    "error",
+    { allowInterfaces: "with-single-extends" },
+  ],
+  "@typescript-eslint/no-invalid-void-type"                        : "error",
+  "@typescript-eslint/no-meaningless-void-operator"                : "warn",
+  "@typescript-eslint/no-mixed-enums"                              : "error",
+  "@typescript-eslint/no-non-null-asserted-nullish-coalescing"     : "error",
+  "@typescript-eslint/no-require-imports"                          : "error",
+  "@typescript-eslint/no-unnecessary-condition"                    : "error",
+  "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
+  "@typescript-eslint/no-unnecessary-qualifier"                    : "error",
+  "@typescript-eslint/no-unnecessary-template-expression"          : "error",
+  "@typescript-eslint/no-unnecessary-type-arguments"               : "error",
+  "@typescript-eslint/no-unnecessary-type-parameters"              : "error",
+  "@typescript-eslint/no-unsafe-enum-comparison"                   : "error",
+  "@typescript-eslint/no-unsafe-function-type"                     : "error",
+  "@typescript-eslint/no-unsafe-unary-minus"                       : "error",
+  "@typescript-eslint/no-useless-empty-export"                     : "error",
+  "@typescript-eslint/no-wrapper-object-types"                     : "error",
+  "@typescript-eslint/non-nullable-type-assertion-style"           : "error",
+  "@typescript-eslint/prefer-find"                                 : "error",
+  "@typescript-eslint/prefer-for-of"                               : "error",
+  "@typescript-eslint/prefer-function-type"                        : "error",
+  "@typescript-eslint/prefer-includes"                             : "error",
+  "@typescript-eslint/prefer-nullish-coalescing"                   : "error",
+  "@typescript-eslint/prefer-optional-chain"                       : "error",
+  "@typescript-eslint/prefer-readonly"                             : "error",
+  "@typescript-eslint/prefer-reduce-type-parameter"                : "error",
+  "@typescript-eslint/prefer-return-this-type"                     : "error",
+  "@typescript-eslint/prefer-string-starts-ends-with"              : [
+    "error",
+    { allowSingleElementEquality: "always" },
+  ],
+  "@typescript-eslint/ban-ts-comment"             : ["error", { "ts-expect-error": "allow-with-description" }],
+  "@typescript-eslint/promise-function-async"     : "error",
+  "@typescript-eslint/require-array-sort-compare" : ["error", { ignoreStringArrays: true }],
+  "@typescript-eslint/switch-exhaustiveness-check": [
+    "error", {
+      allowDefaultCaseForExhaustiveSwitch: true,
+      requireDefaultForNonUnion          : true,
+
+      // considerDefaultExhaustiveForUnions: true,
+    },
+  ],
+  "@typescript-eslint/type-annotation-spacing": "error",
+  "@typescript-eslint/unified-signatures"     : ["error", { ignoreDifferentlyNamedParameters: true }],
 
   /**
    * Extension Rules ---------------------------------------------------------------------------------------------------
@@ -312,7 +366,7 @@ exports.rules = {
   "@typescript-eslint/no-shadow": "error",
 
   "no-throw-literal"                   : "off",
-  "@typescript-eslint/no-throw-literal": "error",
+  "@typescript-eslint/only-throw-error": "error",
 
   "no-use-before-define"                   : "off",
   "@typescript-eslint/no-use-before-define": "error",

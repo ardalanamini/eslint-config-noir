@@ -33,17 +33,42 @@
     "hint",
     "typescript"
   ],
-  "main": "index.js",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "main": "./dist/javascript.js",
+  "types": "./dist/javascript.d.ts",
+  "exports": {
+    "javascript": {
+      "types": "./dist/javascript.d.ts",
+      "default": "./dist/javascript.js"
+    },
+    "typescript": {
+      "types": "./dist/typescript.d.ts",
+      "default": "./dist/typescript.js"
+    },
+    "import": {
+      "types": "./dist/import.d.ts",
+      "default": "./dist/import.js"
+    },
+    "all": {
+      "types": "./dist/all.d.ts",
+      "default": "./dist/all.js"
+    }
+  },
   "scripts": {
-    "lint": "eslint .",
+    "build": "tsc -p tsconfig.build.json",
+    "build:watch": "pnpm build --watch",
+    "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "pnpm lint --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">= 6.7.0",
-    "eslint-import-resolver-typescript": ">= 3.6.0",
-    "eslint-plugin-import": ">= 2.28.1",
-    "eslint": ">= 8.49.0"
+    "@typescript-eslint/eslint-plugin": ">= 7.18.0",
+    "eslint-import-resolver-typescript": ">= 4.3.4",
+    "eslint-plugin-import": ">= 2.31.0",
+    "eslint": ">= 8.57.1"
   },
   "peerDependenciesMeta": {
     "@typescript-eslint/eslint-plugin": {
@@ -57,17 +82,12 @@
     }
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
-    "eslint": "^8.49.0",
-    "eslint-import-resolver-typescript": "^3.6.0",
-    "eslint-plugin-eslint-plugin": "^5.1.1",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-node": "^11.1.0",
-    "typescript": "^5.2.2"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+    "@typescript-eslint/parser": "7.18.0",
+    "eslint": "8.57.1",
+    "eslint-import-resolver-typescript": "4.3.4",
+    "eslint-plugin-eslint-plugin": "6.4.0",
+    "eslint-plugin-import": "2.31.0",
+    "typescript": "5.5.4"
   }
 }

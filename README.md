@@ -10,7 +10,7 @@
 [![Github Stars](https://img.shields.io/github/stars/ardalanamini/eslint-config-noir.svg?style=social&label=Stars)](https://github.com/ardalanamini/eslint-config-noir)
 [![Github Forks](https://img.shields.io/github/forks/ardalanamini/eslint-config-noir.svg?style=social&label=Fork)](https://github.com/ardalanamini/eslint-config-noir)
 
-Noir ESLint shareable config.
+Noir is an opinionated sharable ESLint config.
 
 ## Installation
 
@@ -33,7 +33,6 @@ Add `noir` to the `extends` section of your `.eslintrc` configuration file. You 
 ```json
 {
   "extends": [
-    "eslint:recommended",
     "noir"
   ]
 }
@@ -46,10 +45,7 @@ With [Import](https://github.com/import-js/eslint-plugin-import) support:
 ```json
 {
   "extends": [
-    "eslint:recommended",
     "noir",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:import/recommended",
     "noir/import"
   ]
 }
@@ -62,9 +58,7 @@ With [TypeScript](https://www.typescriptlang.org) support:
 ```json
 {
   "extends": [
-    "eslint:recommended",
     "noir",
-    "plugin:@typescript-eslint/recommended",
     "noir/typescript"
   ]
 }

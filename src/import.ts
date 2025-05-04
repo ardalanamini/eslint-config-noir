@@ -1,6 +1,10 @@
-"use strict";
+const configs = ["plugin:import/recommended"];
 
-exports.rules = {
+export { configs as extends };
+
+export const plugins = ["import"];
+
+export const rules = {
   /**
    * Static analysis ---------------------------------------------------------------------------------------------------
    * @see https://github.com/import-js/eslint-plugin-import#static-analysis
@@ -36,15 +40,26 @@ exports.rules = {
 
   "import/no-duplicates": ["error", { considerQueryString: true }],
 
-  "import/extensions": ["error", "always", { ignorePackages: true }],
+  "import/extensions": [
+    "error", "always", {
+      ignorePackages  : true,
+      checkTypeImports: true,
+    },
+  ],
 
   "sort-imports": "off",
   "import/order": [
     "error",
     {
-      groups     : ["builtin", "external", "internal", "parent", "sibling", "index", "object", "type"],
+      groups     : ["type", "builtin", "external", "internal", "unknown", "sibling", "index", "parent", "object"],
       alphabetize: {
-        order: "asc",
+        order          : "asc",
+        orderImportKind: "asc",
+        caseInsensitive: false,
+      },
+      named: {
+        enabled: true,
+        types  : "types-first",
       },
     },
   ],

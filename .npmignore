@@ -4,3 +4,5 @@
 .gitattributes
 .eslintrc.yml
 tsconfig.json
+
+src/

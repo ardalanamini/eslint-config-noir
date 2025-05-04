@@ -1,12 +1,14 @@
-"use strict";
+const configs = ["eslint:recommended"];
 
-exports.rules = {
+export { configs as extends };
+
+export const rules = {
   /**
    * Possible Problems -------------------------------------------------------------------------------------------------
    * @see https://eslint.org/docs/rules/#possible-problems
    */
 
-  "array-callback-return"        : "error",
+  "array-callback-return"        : ["error", { allowVoid: true }],
   "no-await-in-loop"             : "error",
   "no-constant-binary-expression": "error",
   "no-constructor-return"        : "error",
@@ -101,22 +103,22 @@ exports.rules = {
       ignore                       : [0, "0n", 1, "1n", 2, "2n", 10, "10n"],
     },
   ],
-  "no-mixed-operators"  : "error",
-  "no-multi-assign"     : ["error", { ignoreNonDeclaration: true }],
-  "no-multi-str"        : "error",
-  "no-negated-condition": "error",
-  "no-new-func"         : "error",
-  "no-new-object"       : "error",
-  "no-octal-escape"     : "error",
-  "no-proto"            : "error",
-  "no-return-assign"    : "error",
-  "no-return-await"     : "error",
-  "no-script-url"       : "error",
-  "no-sequences"        : "error",
-  "no-shadow"           : "error",
-  "no-throw-literal"    : "error",
-  "no-undefined"        : "error",
-  "no-underscore-dangle": [
+  "no-mixed-operators"   : "error",
+  "no-multi-assign"      : ["error", { ignoreNonDeclaration: true }],
+  "no-multi-str"         : "error",
+  "no-negated-condition" : "error",
+  "no-new-func"          : "error",
+  "no-object-constructor": "error",
+  "no-octal-escape"      : "error",
+  "no-proto"             : "error",
+  "no-return-assign"     : "error",
+  "no-return-await"      : "error",
+  "no-script-url"        : "error",
+  "no-sequences"         : "error",
+  "no-shadow"            : "error",
+  "no-throw-literal"     : "error",
+  "no-undefined"         : "error",
+  "no-underscore-dangle" : [
     "error",
     {
       allowAfterThis           : true,
