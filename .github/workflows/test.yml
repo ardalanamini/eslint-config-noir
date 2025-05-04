@@ -47,7 +47,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: Build project
+      - name: Build the project
         run: pnpm build
 
       - name: Check code styles
