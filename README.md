@@ -28,46 +28,68 @@ npm i -D eslint-config-noir
 
 ## Usage
 
-Add `noir` to the `extends` section of your `.eslintrc` configuration file. You can omit the `eslint-config-` prefix:
+Add `noir` configs to your ESLint flat configuration file:
 
-```json
-{
-  "extends": [
-    "noir"
-  ]
-}
+```javascript
+import { configs, smartConfig } from "eslint-config-noir";
+
+export default smartConfig(
+  configs.javascript,
+);
 ```
 
-With [Import](https://github.com/import-js/eslint-plugin-import) support:
+### With [Stylistic](https://eslint.style) support:
+
+> You'll first need to install [Stylistic ESLint Plugin](https://eslint.style).
+
+```javascript
+import { configs, smartConfig } from "eslint-config-noir";
+
+export default smartConfig(
+  configs.javascript,
+  configs.stylistic,
+);
+```
+
+### With [Import](https://github.com/import-js/eslint-plugin-import) support:
 
 > You'll first need to install [Import ESLint Plugin](https://github.com/import-js/eslint-plugin-import).
 
-```json
-{
-  "extends": [
-    "noir",
-    "noir/import"
-  ]
-}
+```javascript
+import { configs, smartConfig } from "eslint-config-noir";
+
+export default smartConfig(
+  configs.javascript,
+  configs.imports,
+);
 ```
 
-With [TypeScript](https://www.typescriptlang.org) support:
+### With [TypeScript](https://www.typescriptlang.org) support:
 
 > You'll first need to install [TypeScript ESLint](https://typescript-eslint.io).
 
-```json
-{
-  "extends": [
-    "noir",
-    "noir/typescript"
-  ]
-}
+```javascript
+import { configs, smartConfig } from "eslint-config-noir";
+
+export default smartConfig(
+  configs.javascript,
+  configs.typescript,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.json",
+      },
+    },
+  },
+);
 ```
 
-Or all of the configs at once:
+### Or all of the configs at once:
 
-```json
-{
-  "extends": "noir/all"
-}
+```javascript
+import { configs, smartConfig } from "eslint-config-noir";
+
+export default smartConfig(
+  configs.recommended,
+);
 ```

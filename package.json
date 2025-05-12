@@ -35,43 +35,69 @@
   ],
   "publishConfig": {
     "access": "public",
-    "provenance": true
+    "provenance": true,
+    "imports": {
+      "#configs": {
+        "types": "./dist/configs/index.d.ts",
+        "default": "./dist/configs/index.js"
+      },
+      "#utils": {
+        "types": "./dist/utils/index.d.ts",
+        "default": "./dist/utils/index.js"
+      }
+    }
   },
-  "main": "./dist/javascript.js",
-  "types": "./dist/javascript.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
+    "imports": {
+      "types": "./dist/imports.d.ts",
+      "default": "./dist/imports.js"
+    },
     "javascript": {
       "types": "./dist/javascript.d.ts",
       "default": "./dist/javascript.js"
     },
+    "recommended": {
+      "types": "./dist/recommended.d.ts",
+      "default": "./dist/recommended.js"
+    },
+    "stylistic": {
+      "types": "./dist/stylistic.d.ts",
+      "default": "./dist/stylistic.js"
+    },
     "typescript": {
       "types": "./dist/typescript.d.ts",
       "default": "./dist/typescript.js"
-    },
-    "import": {
-      "types": "./dist/import.d.ts",
-      "default": "./dist/import.js"
-    },
-    "all": {
-      "types": "./dist/all.d.ts",
-      "default": "./dist/all.js"
     }
+  },
+  "imports": {
+    "#configs": "./src/configs/index.ts",
+    "#utils": "./src/utils/index.ts"
   },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "build:watch": "pnpm build --watch",
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint .",
     "lint:fix": "pnpm lint --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">= 7.18.0",
+    "@stylistic/eslint-plugin": ">= 4.2.0",
+    "eslint": ">= 9.26.0",
     "eslint-import-resolver-typescript": ">= 4.3.4",
     "eslint-plugin-import": ">= 2.31.0",
-    "eslint": ">= 8.57.1"
+    "typescript-eslint": ">= 8.31.1"
   },
   "peerDependenciesMeta": {
-    "@typescript-eslint/eslint-plugin": {
+    "@stylistic/eslint-plugin": {
       "optional": true
     },
     "eslint-import-resolver-typescript": {
@@ -79,15 +105,24 @@
     },
     "eslint-plugin-import": {
       "optional": true
+    },
+    "typescript-eslint": {
+      "optional": true
     }
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "7.18.0",
-    "@typescript-eslint/parser": "7.18.0",
-    "eslint": "8.57.1",
+    "@eslint/compat": "1.2.9",
+    "@eslint/js": "9.26.0",
+    "@stylistic/eslint-plugin": "4.2.0",
+    "@types/node": "22.15.17",
+    "eslint": "9.26.0",
+    "eslint-config-flat-gitignore": "2.1.0",
     "eslint-import-resolver-typescript": "4.3.4",
     "eslint-plugin-eslint-plugin": "6.4.0",
     "eslint-plugin-import": "2.31.0",
-    "typescript": "5.5.4"
+    "globals": "16.1.0",
+    "jiti": "2.4.2",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.32.0"
   }
 }
