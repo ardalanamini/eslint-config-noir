@@ -91,5 +91,5 @@ jobs:
 
     steps:
       - name: Check test matrix status
-        if  : ${{ needs.test.result != 'success' }}
+        if  : ${{ needs.build.result != 'success' || needs.lint.result != 'success' }}
         run : exit 1
