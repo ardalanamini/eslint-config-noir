@@ -12,7 +12,34 @@ concurrency:
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
 jobs:
-  test:
+  build:
+    name: Test
+
+    timeout-minutes: 15
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version: 20
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build the project
+        run: pnpm build
+
+  lint:
     name: Test
 
     timeout-minutes: 15
@@ -47,9 +74,6 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: Build the project
-        run: pnpm build
-
       - name: Check code styles
         run: pnpm lint
 
@@ -57,7 +81,8 @@ jobs:
     name: Test Summary
 
     needs:
-      - test
+      - build
+      - lint
 
     if: ${{ always() && github.event_name == 'pull_request' }}
 
