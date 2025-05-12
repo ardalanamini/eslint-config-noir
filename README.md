@@ -64,6 +64,19 @@ export default smartConfig(
 );
 ```
 
+### With `Export` support:
+
+> You'll first need to install [Perfectionist ESLint Plugin](https://perfectionist.dev).
+
+```javascript
+import { configs, smartConfig } from "eslint-config-noir";
+
+export default smartConfig(
+  configs.javascript,
+  configs.exports,
+);
+```
+
 ### With [TypeScript](https://www.typescriptlang.org) support:
 
 > You'll first need to install [TypeScript ESLint](https://typescript-eslint.io).
@@ -91,5 +104,12 @@ import { configs, smartConfig } from "eslint-config-noir";
 
 export default smartConfig(
   configs.recommended,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.json",
+      },
+    },
+  },
 );
 ```
