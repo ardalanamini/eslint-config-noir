@@ -1,5 +1,6 @@
 import globals from "globals";
 import { smartConfig } from "#utils";
+import { exports } from "./exports.js";
 import { imports } from "./imports.js";
 import { javascript } from "./javascript.js";
 import { stylistic } from "./stylistic.js";
@@ -9,6 +10,7 @@ export const recommended = smartConfig(
   javascript,
   stylistic,
   imports,
+  exports,
   typescript,
   {
     linterOptions: {

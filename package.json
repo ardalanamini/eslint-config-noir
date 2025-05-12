@@ -57,6 +57,10 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
+    "exports": {
+      "types": "./dist/exports.d.ts",
+      "default": "./dist/exports.js"
+    },
     "imports": {
       "types": "./dist/imports.d.ts",
       "default": "./dist/imports.js"
@@ -94,6 +98,7 @@
     "eslint": ">= 9.26.0",
     "eslint-import-resolver-typescript": ">= 4.3.4",
     "eslint-plugin-import": ">= 2.31.0",
+    "eslint-plugin-perfectionist": ">= 4.12.3",
     "typescript-eslint": ">= 8.31.1"
   },
   "peerDependenciesMeta": {
@@ -104,6 +109,9 @@
       "optional": true
     },
     "eslint-plugin-import": {
+      "optional": true
+    },
+    "eslint-plugin-perfectionist": {
       "optional": true
     },
     "typescript-eslint": {
@@ -120,6 +128,7 @@
     "eslint-import-resolver-typescript": "4.3.4",
     "eslint-plugin-eslint-plugin": "6.4.0",
     "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-perfectionist": "4.12.3",
     "globals": "16.1.0",
     "jiti": "2.4.2",
     "typescript": "5.8.3",
