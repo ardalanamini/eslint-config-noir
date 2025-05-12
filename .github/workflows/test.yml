@@ -25,13 +25,13 @@ jobs:
       - name: Use PNPM
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10
 
-      - name: Use Node.js 20
+      - name: Use Node.js 22
         uses: actions/setup-node@v4
         with:
           cache: pnpm
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: pnpm i
@@ -56,6 +56,7 @@ jobs:
           - 16
           - 18
           - 20
+          - 22
 
     steps:
       - uses: actions/checkout@v4
@@ -63,7 +64,7 @@ jobs:
       - name: Use PNPM
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4

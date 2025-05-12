@@ -6,7 +6,7 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+*'
 
 env:
-  NODE_VERSION: 20
+  NODE_VERSION: 22
 
 jobs:
   test:
@@ -68,7 +68,7 @@ jobs:
       - name: Use PNPM
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
@@ -115,7 +115,7 @@ jobs:
       - name: Use PNPM
         uses: pnpm/action-setup@v2
         with:
-          version: 8
+          version: 10
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v4
