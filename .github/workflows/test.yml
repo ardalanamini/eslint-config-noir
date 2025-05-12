@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   build:
-    name: Test
+    name: Build
 
     timeout-minutes: 15
 
@@ -40,7 +40,7 @@ jobs:
         run: pnpm build
 
   lint:
-    name: Test
+    name: Lint
 
     timeout-minutes: 15
 
@@ -53,10 +53,10 @@ jobs:
           - macos-latest
           - windows-latest
         node-version:
-          - 16
           - 18
           - 20
           - 22
+          - 24
 
     steps:
       - uses: actions/checkout@v4
