@@ -1,15 +1,5 @@
-import importPlugin from "eslint-plugin-import";
-import { configs } from "typescript-eslint";
-import { type TConfigWithExtends, type TConfigWithExtendsArray, smartConfig } from "#utils";
-
-let isImportPluginInstalled = false;
-
-try {
-  require.resolve("eslint-plugin-import");
-  isImportPluginInstalled = true;
-} catch {
-  /* empty */
-}
+import { configs as plugin } from "typescript-eslint";
+import { type TConfigWithExtends, type TConfigWithExtendsArray, canUseImportPlugin, smartConfig } from "#utils";
 
 const config: TConfigWithExtends = {
   languageOptions: {
@@ -341,7 +331,13 @@ const config: TConfigWithExtends = {
   },
 };
 
-if (isImportPluginInstalled) {
+const configs: TConfigWithExtendsArray = [];
+
+if (canUseImportPlugin) {
+  const importPlugin = await import("eslint-plugin-import");
+
+  configs.push(importPlugin.flatConfigs.typescript);
+
   config.settings ??= {};
 
   config.settings["import/resolver"] = {
@@ -350,11 +346,10 @@ if (isImportPluginInstalled) {
   };
 }
 
-export const typescript = smartConfig(
-  isImportPluginInstalled ? importPlugin.flatConfigs.typescript : [],
+// :))
+// eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+configs.push(plugin.recommended as TConfigWithExtendsArray);
 
-  // :))
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
-  configs.recommended as TConfigWithExtendsArray,
-  config,
-);
+configs.push(config);
+
+export const typescript = smartConfig(...configs);

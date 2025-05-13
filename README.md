@@ -97,13 +97,40 @@ export default smartConfig(
 );
 ```
 
-### Or all of the configs at once:
+### With all the configs at once:
 
 ```javascript
 import { configs, smartConfig } from "eslint-config-noir";
 
 export default smartConfig(
   configs.recommended,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: "./tsconfig.json",
+      },
+    },
+  },
+);
+```
+
+### Or with only the possible ones smartly:
+
+For JavaScript only:
+
+```javascript
+import { configs, smartConfig } from "eslint-config-noir";
+
+export default smartConfig(configs.smart);
+```
+
+For projects with TypeScript:
+
+```typescript
+import { configs, smartConfig } from "eslint-config-noir";
+
+export default smartConfig(
+  configs.smart,
   {
     languageOptions: {
       parserOptions: {

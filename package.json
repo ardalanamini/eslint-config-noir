@@ -94,11 +94,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
+    "@eslint/js": ">= 9.26.0",
     "@stylistic/eslint-plugin": ">= 4.2.0",
     "eslint": ">= 9.26.0",
     "eslint-import-resolver-typescript": ">= 4.3.4",
     "eslint-plugin-import": ">= 2.31.0",
     "eslint-plugin-perfectionist": ">= 4.12.3",
+    "globals": ">= 16.1.0",
     "typescript-eslint": ">= 8.31.1"
   },
   "peerDependenciesMeta": {
@@ -114,12 +116,14 @@
     "eslint-plugin-perfectionist": {
       "optional": true
     },
+    "globals": {
+      "optional": true
+    },
     "typescript-eslint": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@eslint/compat": "1.2.9",
     "@eslint/js": "9.26.0",
     "@stylistic/eslint-plugin": "4.2.0",
     "@types/node": "22.15.17",
