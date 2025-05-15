@@ -10,6 +10,7 @@
   ],
   "exclude": [
     "dist",
+    "commitlint.config.ts",
     "eslint.config.mts"
   ]
 }
