@@ -7,28 +7,16 @@ settings:
 importers:
 
   .:
-    devDependencies:
+    dependencies:
       '@eslint/js':
         specifier: 9.26.0
         version: 9.26.0
       '@stylistic/eslint-plugin':
         specifier: 4.2.0
         version: 4.2.0(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)
-      '@types/node':
-        specifier: 22.15.18
-        version: 22.15.18
-      eslint:
-        specifier: 9.26.0
-        version: 9.26.0(jiti@2.4.2)
-      eslint-config-flat-gitignore:
-        specifier: 2.1.0
-        version: 2.1.0(eslint@9.26.0(jiti@2.4.2))
       eslint-import-resolver-typescript:
         specifier: 4.3.4
         version: 4.3.4(eslint-plugin-import@2.31.0)(eslint@9.26.0(jiti@2.4.2))
-      eslint-plugin-eslint-plugin:
-        specifier: 6.4.0
-        version: 6.4.0(eslint@9.26.0(jiti@2.4.2))
       eslint-plugin-import:
         specifier: 2.31.0
         version: 2.31.0(@typescript-eslint/parser@8.32.1(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3))(eslint-import-resolver-typescript@4.3.4)(eslint@9.26.0(jiti@2.4.2))
@@ -41,15 +29,28 @@ importers:
       globals:
         specifier: 16.1.0
         version: 16.1.0
+      typescript-eslint:
+        specifier: 8.32.1
+        version: 8.32.1(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)
+    devDependencies:
+      '@types/node':
+        specifier: 22.15.18
+        version: 22.15.18
+      eslint:
+        specifier: 9.26.0
+        version: 9.26.0(jiti@2.4.2)
+      eslint-config-flat-gitignore:
+        specifier: 2.1.0
+        version: 2.1.0(eslint@9.26.0(jiti@2.4.2))
+      eslint-plugin-eslint-plugin:
+        specifier: 6.4.0
+        version: 6.4.0(eslint@9.26.0(jiti@2.4.2))
       jiti:
         specifier: 2.4.2
         version: 2.4.2
       typescript:
         specifier: 5.8.3
         version: 5.8.3
-      typescript-eslint:
-        specifier: 8.32.1
-        version: 8.32.1(eslint@9.26.0(jiti@2.4.2))(typescript@5.8.3)
 
 packages:
 

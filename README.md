@@ -14,16 +14,22 @@ Noir is an opinionated sharable ESLint config.
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org):
+### PNPM
 
 ```shell
-npm i -D eslint
+pnpm add -D eslint eslint-config-noir
 ```
 
-Next, install `eslint-config-noir`:
+### NPM
 
 ```shell
-npm i -D eslint-config-noir
+npm i -D eslint eslint-config-noir
+```
+
+### Yarn
+
+```shell
+yarn add -D eslint eslint-config-noir
 ```
 
 ## Usage
@@ -40,8 +46,6 @@ export default smartConfig(
 
 ### With [Stylistic](https://eslint.style) support:
 
-> You'll first need to install [Stylistic ESLint Plugin](https://eslint.style).
-
 ```javascript
 import { configs, smartConfig } from "eslint-config-noir";
 
@@ -52,8 +56,6 @@ export default smartConfig(
 ```
 
 ### With [Import](https://github.com/import-js/eslint-plugin-import) support:
-
-> You'll first need to install [Import ESLint Plugin](https://github.com/import-js/eslint-plugin-import).
 
 ```javascript
 import { configs, smartConfig } from "eslint-config-noir";
@@ -66,8 +68,6 @@ export default smartConfig(
 
 ### With `Export` support:
 
-> You'll first need to install [Perfectionist ESLint Plugin](https://perfectionist.dev).
-
 ```javascript
 import { configs, smartConfig } from "eslint-config-noir";
 
@@ -78,8 +78,6 @@ export default smartConfig(
 ```
 
 ### With [TypeScript](https://www.typescriptlang.org) support:
-
-> You'll first need to install [TypeScript ESLint](https://typescript-eslint.io).
 
 ```javascript
 import { configs, smartConfig } from "eslint-config-noir";
@@ -99,8 +97,6 @@ export default smartConfig(
 
 ### With [Unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn) support:
 
-> You'll first need to install [Unicorn ESLint Plugin](https://github.com/sindresorhus/eslint-plugin-unicorn).
-
 ```javascript
 import { configs, smartConfig } from "eslint-config-noir";
 
@@ -117,33 +113,6 @@ import { configs, smartConfig } from "eslint-config-noir";
 
 export default smartConfig(
   configs.recommended,
-  {
-    languageOptions: {
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-    },
-  },
-);
-```
-
-### Or with only the possible ones smartly:
-
-For JavaScript only:
-
-```javascript
-import { configs, smartConfig } from "eslint-config-noir";
-
-export default smartConfig(configs.smart);
-```
-
-For projects with TypeScript:
-
-```typescript
-import { configs, smartConfig } from "eslint-config-noir";
-
-export default smartConfig(
-  configs.smart,
   {
     languageOptions: {
       parserOptions: {

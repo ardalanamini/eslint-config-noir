@@ -47,53 +47,19 @@
       }
     }
   },
-  "type": "module",
+  "imports": {
+    "#configs": "./src/configs/index.ts",
+    "#utils": "./src/utils/index.ts"
+  },
   "files": [
     "dist",
     "README.md",
     "LICENSE",
     "package.json"
   ],
+  "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    "exports": {
-      "types": "./dist/exports.d.ts",
-      "default": "./dist/exports.js"
-    },
-    "imports": {
-      "types": "./dist/imports.d.ts",
-      "default": "./dist/imports.js"
-    },
-    "javascript": {
-      "types": "./dist/javascript.d.ts",
-      "default": "./dist/javascript.js"
-    },
-    "recommended": {
-      "types": "./dist/recommended.d.ts",
-      "default": "./dist/recommended.js"
-    },
-    "smart": {
-      "types": "./dist/smart.d.ts",
-      "default": "./dist/smart.js"
-    },
-    "stylistic": {
-      "types": "./dist/stylistic.d.ts",
-      "default": "./dist/stylistic.js"
-    },
-    "unicorn": {
-      "types": "./dist/unicorn.d.ts",
-      "default": "./dist/unicorn.js"
-    },
-    "typescript": {
-      "types": "./dist/typescript.d.ts",
-      "default": "./dist/typescript.js"
-    }
-  },
-  "imports": {
-    "#configs": "./src/configs/index.ts",
-    "#utils": "./src/utils/index.ts"
-  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "build:watch": "pnpm build --watch",
@@ -102,53 +68,24 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "@eslint/js": ">= 9.26.0",
-    "@stylistic/eslint-plugin": ">= 4.2.0",
-    "eslint": ">= 9.26.0",
-    "eslint-import-resolver-typescript": ">= 4.3.4",
-    "eslint-plugin-import": ">= 2.31.0",
-    "eslint-plugin-perfectionist": ">= 4.13.0",
-    "eslint-plugin-unicorn": ">= 59.0.1",
-    "globals": ">= 16.1.0",
-    "typescript-eslint": ">= 8.32.1"
+    "eslint": ">= 9.26.0"
   },
-  "peerDependenciesMeta": {
-    "@stylistic/eslint-plugin": {
-      "optional": true
-    },
-    "eslint-import-resolver-typescript": {
-      "optional": true
-    },
-    "eslint-plugin-import": {
-      "optional": true
-    },
-    "eslint-plugin-perfectionist": {
-      "optional": true
-    },
-    "eslint-plugin-unicorn": {
-      "optional": true
-    },
-    "globals": {
-      "optional": true
-    },
-    "typescript-eslint": {
-      "optional": true
-    }
-  },
-  "devDependencies": {
+  "dependencies": {
     "@eslint/js": "9.26.0",
     "@stylistic/eslint-plugin": "4.2.0",
-    "@types/node": "22.15.18",
-    "eslint": "9.26.0",
-    "eslint-config-flat-gitignore": "2.1.0",
     "eslint-import-resolver-typescript": "4.3.4",
-    "eslint-plugin-eslint-plugin": "6.4.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-perfectionist": "4.13.0",
     "eslint-plugin-unicorn": "59.0.1",
     "globals": "16.1.0",
-    "jiti": "2.4.2",
-    "typescript": "5.8.3",
     "typescript-eslint": "8.32.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.18",
+    "eslint": "9.26.0",
+    "eslint-config-flat-gitignore": "2.1.0",
+    "eslint-plugin-eslint-plugin": "6.4.0",
+    "jiti": "2.4.2",
+    "typescript": "5.8.3"
   }
 }

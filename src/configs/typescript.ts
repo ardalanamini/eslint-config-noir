@@ -1,5 +1,6 @@
+import importPlugin from "eslint-plugin-import";
 import { configs as plugin } from "typescript-eslint";
-import { type TConfigWithExtends, type TConfigWithExtendsArray, canUseImportPlugin, smartConfig } from "#utils";
+import { type TConfigWithExtends, type TConfigWithExtendsArray, smartConfig } from "#utils";
 
 const config: TConfigWithExtends = {
   languageOptions: {
@@ -331,25 +332,18 @@ const config: TConfigWithExtends = {
   },
 };
 
-const configs: TConfigWithExtendsArray = [];
+config.settings ??= {};
 
-if (canUseImportPlugin) {
-  const importPlugin = await import("eslint-plugin-import");
+config.settings["import/resolver"] = {
+  typescript: true,
+  node      : true,
+};
 
-  configs.push(importPlugin.flatConfigs.typescript);
+export const typescript = smartConfig(
+  importPlugin.flatConfigs.typescript,
 
-  config.settings ??= {};
-
-  config.settings["import/resolver"] = {
-    typescript: true,
-    node      : true,
-  };
-}
-
-// :))
-// eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
-configs.push(plugin.recommended as TConfigWithExtendsArray);
-
-configs.push(config);
-
-export const typescript = smartConfig(...configs);
+  // :))
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+  plugin.recommended as TConfigWithExtendsArray,
+  config,
+);
