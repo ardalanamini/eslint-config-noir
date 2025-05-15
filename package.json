@@ -73,9 +73,17 @@
       "types": "./dist/recommended.d.ts",
       "default": "./dist/recommended.js"
     },
+    "smart": {
+      "types": "./dist/smart.d.ts",
+      "default": "./dist/smart.js"
+    },
     "stylistic": {
       "types": "./dist/stylistic.d.ts",
       "default": "./dist/stylistic.js"
+    },
+    "unicorn": {
+      "types": "./dist/unicorn.d.ts",
+      "default": "./dist/unicorn.js"
     },
     "typescript": {
       "types": "./dist/typescript.d.ts",
@@ -99,10 +107,10 @@
     "eslint": ">= 9.26.0",
     "eslint-import-resolver-typescript": ">= 4.3.4",
     "eslint-plugin-import": ">= 2.31.0",
-    "eslint-plugin-perfectionist": ">= 4.12.3",
+    "eslint-plugin-perfectionist": ">= 4.13.0",
     "eslint-plugin-unicorn": ">= 59.0.1",
     "globals": ">= 16.1.0",
-    "typescript-eslint": ">= 8.31.1"
+    "typescript-eslint": ">= 8.32.1"
   },
   "peerDependenciesMeta": {
     "@stylistic/eslint-plugin": {
@@ -130,17 +138,17 @@
   "devDependencies": {
     "@eslint/js": "9.26.0",
     "@stylistic/eslint-plugin": "4.2.0",
-    "@types/node": "22.15.17",
+    "@types/node": "22.15.18",
     "eslint": "9.26.0",
     "eslint-config-flat-gitignore": "2.1.0",
     "eslint-import-resolver-typescript": "4.3.4",
     "eslint-plugin-eslint-plugin": "6.4.0",
     "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-perfectionist": "4.12.3",
+    "eslint-plugin-perfectionist": "4.13.0",
     "eslint-plugin-unicorn": "59.0.1",
     "globals": "16.1.0",
     "jiti": "2.4.2",
     "typescript": "5.8.3",
-    "typescript-eslint": "8.32.0"
+    "typescript-eslint": "8.32.1"
   }
 }
