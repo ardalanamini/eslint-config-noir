@@ -3,7 +3,9 @@ import {
   type TConfigWithExtendsArray,
   canUseImportPlugin,
   canUsePerfectionistPlugin,
-  canUseStylisticPlugin, canUseTypescriptPlugin,
+  canUseStylisticPlugin,
+  canUseTypescriptPlugin,
+  canUseUnicornPlugin,
   smartConfig,
 } from "#utils";
 import { javascript } from "./javascript.js";
@@ -26,6 +28,12 @@ if (canUsePerfectionistPlugin) {
   const { exports } = await import("./exports.js");
 
   configs.push(exports);
+}
+
+if (canUseUnicornPlugin) {
+  const { unicorn } = await import("./unicorn.js");
+
+  configs.push(unicorn);
 }
 
 if (canUseTypescriptPlugin) {

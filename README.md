@@ -97,6 +97,19 @@ export default smartConfig(
 );
 ```
 
+### With [Unicorn](https://github.com/sindresorhus/eslint-plugin-unicorn) support:
+
+> You'll first need to install [Unicorn ESLint Plugin](https://github.com/sindresorhus/eslint-plugin-unicorn).
+
+```javascript
+import { configs, smartConfig } from "eslint-config-noir";
+
+export default smartConfig(
+  configs.javascript,
+  configs.unicorn,
+);
+```
+
 ### With all the configs at once:
 
 ```javascript

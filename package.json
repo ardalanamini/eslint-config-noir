@@ -89,7 +89,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "build:watch": "pnpm build --watch",
-    "lint": "eslint .",
+    "lint": "eslint --cache --cache-location ./.cache/eslint/ .",
     "lint:fix": "pnpm lint --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -100,6 +100,7 @@
     "eslint-import-resolver-typescript": ">= 4.3.4",
     "eslint-plugin-import": ">= 2.31.0",
     "eslint-plugin-perfectionist": ">= 4.12.3",
+    "eslint-plugin-unicorn": ">= 59.0.1",
     "globals": ">= 16.1.0",
     "typescript-eslint": ">= 8.31.1"
   },
@@ -114,6 +115,9 @@
       "optional": true
     },
     "eslint-plugin-perfectionist": {
+      "optional": true
+    },
+    "eslint-plugin-unicorn": {
       "optional": true
     },
     "globals": {
@@ -133,6 +137,7 @@
     "eslint-plugin-eslint-plugin": "6.4.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-perfectionist": "4.12.3",
+    "eslint-plugin-unicorn": "59.0.1",
     "globals": "16.1.0",
     "jiti": "2.4.2",
     "typescript": "5.8.3",

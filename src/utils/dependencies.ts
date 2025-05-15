@@ -1,5 +1,6 @@
 export function canUseDependency(dependency: string): boolean {
   try {
+    // eslint-disable-next-line unicorn/prefer-module
     require.resolve(dependency);
 
     return true;
@@ -15,3 +16,5 @@ export const canUseImportPlugin = canUseDependency("eslint-plugin-import");
 export const canUseStylisticPlugin = canUseDependency("@stylistic/eslint-plugin");
 
 export const canUseTypescriptPlugin = canUseDependency("typescript-eslint");
+
+export const canUseUnicornPlugin = canUseDependency("eslint-plugin-unicorn");

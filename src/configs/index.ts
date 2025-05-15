@@ -5,3 +5,4 @@ export * from "./recommended.js";
 export * from "./smart.js";
 export * from "./stylistic.js";
 export * from "./typescript.js";
+export * from "./unicorn.js";
