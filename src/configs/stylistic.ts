@@ -175,7 +175,7 @@ const stylisticRules: Partial<Linter.RulesRecord> = {
   ],
   "multiline-comment-style" : "off",
   "multiline-ternary"       : ["error", "always-multiline"],
-  "new-parens"              : ["error", "never"],
+  "new-parens"              : ["error", "always"],
   "newline-per-chained-call": ["error", { ignoreChainWithDepth: 2 }],
   "no-confusing-arrow"      : "error",
   "no-extra-parens"         : "error",
