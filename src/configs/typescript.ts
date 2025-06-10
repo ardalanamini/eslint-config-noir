@@ -1,6 +1,6 @@
 import importPlugin from "eslint-plugin-import";
 import { configs as plugin } from "typescript-eslint";
-import { type TConfigWithExtends, type TConfigWithExtendsArray, smartConfig } from "#utils";
+import { type TConfigWithExtends, type TConfigWithExtendsArray, ALLOWED_MAGIC_NUMBERS, smartConfig } from "#utils";
 
 const config: TConfigWithExtends = {
   languageOptions: {
@@ -307,7 +307,7 @@ const config: TConfigWithExtends = {
     "@typescript-eslint/no-magic-numbers": [
       "error",
       {
-        ignore                       : [0, 1, 2, 10],
+        ignore                       : ALLOWED_MAGIC_NUMBERS,
         ignoreDefaultValues          : true,
         ignoreEnums                  : true,
         ignoreNumericLiteralTypes    : true,

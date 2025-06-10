@@ -1,5 +1,5 @@
 import ESLint from "@eslint/js";
-import { smartConfig } from "#utils";
+import { ALLOWED_MAGIC_NUMBERS, smartConfig } from "#utils";
 
 export const javascript = smartConfig(
   ESLint.configs.recommended,
@@ -102,7 +102,7 @@ export const javascript = smartConfig(
           ignoreArrayIndexes           : true,
           ignoreDefaultValues          : true,
           ignoreClassFieldInitialValues: true,
-          ignore                       : [0, "0n", 1, "1n", 2, "2n", 10, "10n"],
+          ignore                       : ALLOWED_MAGIC_NUMBERS,
         },
       ],
       "no-multi-assign"      : ["error", { ignoreNonDeclaration: true }],
