@@ -118,6 +118,7 @@ export const javascript = smartConfig(
       "no-sequences"         : "error",
       "no-shadow"            : "error",
       "no-throw-literal"     : "error",
+      "no-unassigned-vars"   : "error",
       "no-undefined"         : "error",
       "no-underscore-dangle" : [
         "error",
