@@ -6,11 +6,4 @@ export default smartConfig(
   gitignore(),
   eslintPlugin.configs["flat/recommended"],
   configs.recommended,
-  {
-    languageOptions: {
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-    },
-  },
 );

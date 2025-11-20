@@ -85,13 +85,6 @@ import { configs, smartConfig } from "eslint-config-noir";
 export default smartConfig(
   configs.javascript,
   configs.typescript,
-  {
-    languageOptions: {
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-    },
-  },
 );
 ```
 
@@ -113,12 +106,5 @@ import { configs, smartConfig } from "eslint-config-noir";
 
 export default smartConfig(
   configs.recommended,
-  {
-    languageOptions: {
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
-    },
-  },
 );
 ```
