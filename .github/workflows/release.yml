@@ -71,7 +71,7 @@ jobs:
           version: 10
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           cache: pnpm
           node-version: ${{ env.NODE_VERSION }}
@@ -118,7 +118,7 @@ jobs:
           version: 10
 
       - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           cache: pnpm
           node-version: ${{ env.NODE_VERSION }}
