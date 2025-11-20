@@ -65,7 +65,6 @@ const stylisticRules: Partial<Linter.RulesRecord> = {
   "jsx-equals-spacing"       : ["error", "never"],
   "jsx-first-prop-new-line"  : ["error", "multiline"],
   "jsx-function-call-newline": ["error", "multiline"],
-  "jsx-indent"               : ["error", 2],
   "jsx-indent-props"         : ["error", 2],
   "jsx-max-props-per-line"   : [
     "error",
@@ -83,7 +82,6 @@ const stylisticRules: Partial<Linter.RulesRecord> = {
   ],
   "jsx-one-expression-per-line": ["error", { allow: "non-jsx" }],
   "jsx-pascal-case"            : "error",
-  "jsx-props-no-multi-spaces"  : "error",
   "jsx-quotes"                 : ["error", "prefer-double"],
   "jsx-self-closing-comp"      : [
     "error",
@@ -260,14 +258,8 @@ const stylisticRules: Partial<Linter.RulesRecord> = {
   "type-annotation-spacing": [
     "error",
     {
-      before   : false,
-      after    : true,
-      overrides: {
-        arrow: {
-          before: true,
-          after : true,
-        },
-      },
+      before: false,
+      after : true,
     },
   ],
   "type-generic-spacing"    : "error",
