@@ -329,6 +329,9 @@ const config: TConfigWithExtends = {
 
     "no-return-await"                : "off",
     "@typescript-eslint/return-await": ["error", "in-try-catch"],
+
+    "no-unused-private-class-members"                   : "off",
+    "@typescript-eslint/no-unused-private-class-members": "error",
   },
 };
 
@@ -341,9 +344,6 @@ config.settings["import/resolver"] = {
 
 export const typescript = smartConfig(
   importPlugin.flatConfigs.typescript,
-
-  // :))
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
   plugin.recommended as TConfigWithExtendsArray,
   config,
 );
