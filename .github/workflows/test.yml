@@ -11,6 +11,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 
+env:
+  NODE_VERSION: 24
+
 jobs:
   build:
     name: Build
@@ -27,11 +30,11 @@ jobs:
         with:
           version: 10
 
-      - name: Use Node.js 22
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v6
         with:
           cache: pnpm
-          node-version: 22
+          node-version: ${{ env.NODE_VERSION }}
 
       - name: Install dependencies
         run: pnpm i
@@ -42,10 +45,6 @@ jobs:
   lint:
     name: Lint
 
-    timeout-minutes: 15
-
-    runs-on: ${{ matrix.os }}
-
     strategy:
       matrix:
         os:
@@ -53,10 +52,13 @@ jobs:
           - macos-latest
           - windows-latest
         node-version:
-          - 18
           - 20
           - 22
           - 24
+
+    timeout-minutes: 15
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v5
