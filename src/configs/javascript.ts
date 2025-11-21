@@ -154,6 +154,7 @@ export const javascript = smartConfig(
       "prefer-regex-literals"         : ["error", { disallowRedundantWrapping: true }],
       "prefer-rest-params"            : "error",
       "prefer-template"               : "error",
+      "preserve-caught-error"         : "error",
       "radix"                         : ["error", "as-needed"],
       "sort-imports"                  : [
         "error",
