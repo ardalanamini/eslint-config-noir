@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-noir",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Noir ESLint shareable config",
   "author": "Ardalan Amini <ardalanamini22@gmail.com> (https://ardalanamini.com/)",
   "license": "MIT",
