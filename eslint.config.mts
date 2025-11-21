@@ -4,6 +4,6 @@ import { configs, smartConfig } from "./src/index.js";
 
 export default smartConfig(
   gitignore(),
-  eslintPlugin.configs["flat/recommended"],
+  eslintPlugin.configs.recommended,
   configs.recommended,
 );
