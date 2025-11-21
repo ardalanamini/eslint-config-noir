@@ -89,7 +89,7 @@
     "eslint-plugin-eslint-plugin": "6.4.0",
     "husky": "9.1.7",
     "is-ci": "4.1.0",
-    "jiti": "2.4.2",
+    "jiti": "2.6.1",
     "typescript": "5.9.3"
   }
 }
