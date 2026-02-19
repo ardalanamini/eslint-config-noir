@@ -258,6 +258,7 @@ const config: TConfigWithExtends = {
     "@typescript-eslint/no-unsafe-function-type"                     : "error",
     "@typescript-eslint/no-unsafe-type-assertion"                    : "error",
     "@typescript-eslint/no-unsafe-unary-minus"                       : "error",
+    "@typescript-eslint/no-useless-default-assignment"               : "error",
     "@typescript-eslint/no-useless-empty-export"                     : "error",
     "@typescript-eslint/no-wrapper-object-types"                     : "error",
     "@typescript-eslint/non-nullable-type-assertion-style"           : "error",

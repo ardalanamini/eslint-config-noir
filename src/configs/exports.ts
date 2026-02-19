@@ -9,11 +9,15 @@ export const exports = smartConfig({
     "perfectionist/sort-exports": [
       "error",
       {
-        type              : "alphabetical",
-        order             : "asc",
+        type        : "alphabetical",
+        order       : "asc",
+        fallbackSort: {
+          type : "natural",
+          order: "asc",
+        },
         ignoreCase        : false,
         partitionByComment: true,
-        groupKind         : "types-first",
+        groups            : ["type-export", "value-export"],
       },
     ],
   },
