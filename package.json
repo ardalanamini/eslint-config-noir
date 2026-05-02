@@ -84,7 +84,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "20.5.0",
-    "@commitlint/config-conventional": "20.5.0",
+    "@commitlint/config-conventional": "20.5.3",
     "eslint-config-flat-gitignore": "2.3.0",
     "eslint-plugin-eslint-plugin": "7.3.2",
     "husky": "9.1.7",
